@@ -1,0 +1,42 @@
+{
+  "name": "react-userlane",
+  "version": "1.0.0",
+  "description": "Userlane.com wrapper for react",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm t && npm run build"
+  },
+  "keywords": [
+    "react",
+    "userlane",
+    "react-userlane"
+  ],
+  "author": {
+    "name": "Felix Wostal",
+    "url": "https://felixwostal.de"
+  },
+  "bugs": {
+    "url": "https://github.com/fel1xw/react-userlane/issues"
+  },
+  "homepage": "https://github.com/fel1xw/react-userlane#readme",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^16.9.17",
+    "@types/react-dom": "^16.9.4",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "rimraf": "^3.0.0",
+    "typescript": "^3.7.4"
+  },
+  "peerDependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  }
+}
