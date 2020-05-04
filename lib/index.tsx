@@ -3,6 +3,7 @@ import * as React from 'react'
 type Props = {
   appId: string
   user?: any
+  lang?: string
 }
 
 declare global {
@@ -27,7 +28,11 @@ export default class Userlane extends React.Component<Props, any> {
     }
   }
 
-  shouldComponentUpdate({ appId, user }: Props) {
+  shouldComponentUpdate({ appId, user, lang }: Props) {
+    if (lang !== this.props.lang) {
+      window.Userlane('lang', lang)
+    }
+
     if (JSON.stringify(user) !== JSON.stringify(this.props.user)) {
       const { id, ...customProps } = user
       window.Userlane('identify', id, customProps)
@@ -41,9 +46,10 @@ export default class Userlane extends React.Component<Props, any> {
   }
 
   initialize(props: Props) {
-    const { appId, user: { id, ...customProps } } = props
+    const { appId, user: { id, ...customProps }, lang } = props
 
     if (appId && id) {
+      if (lang) window.Userlane('lang', lang)
       window.Userlane('identify', id, customProps)
       window.Userlane('init', appId)
     }

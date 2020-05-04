@@ -1,6 +1,6 @@
 {
   "name": "react-userlane",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Userlane.com wrapper for react",
   "files": [
     "dist"
